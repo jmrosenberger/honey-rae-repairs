@@ -1,32 +1,18 @@
-import React, { useEffect, useState } from "react"
+import React from "react"
+import { CustomerList } from "./customers/CustomerList.js"
+import { EmployeeList } from "./employees/EmployeeList.js"
+
+ // ------  || THIS MODULE IS FOR DETERMINING WHAT ORDER EVERYTHING RENDERS ||  ----- //
+// ------   ||    IN HTML. ALL FUNCTIONALITY SHOULD GO IN OTHER MODULES.    || ----- //
+
 
 export const Repairs = () => {
-    const [customers, assignCustomers] = useState([])
-
-    useEffect(
-        () => {
-            fetch("http://localhost:8088/customers")
-                .then(res => res.json())
-                .then(
-                    (customerArray) => { 
-                        setCustomer(customerArray)
-                    }
-                )
-        },
-        []
-    )
-
+    
     return (
         <>
         <h1>Honey Rae's Repair Shop</h1>
-
-        {
-            customers.map(
-                (customerObject) => {
-                    return <h2>{customerObject.name}</h2>
-                 }
-            )
-        }
+        <CustomerList />
+        <EmployeeList />
         </>
     )
 }
