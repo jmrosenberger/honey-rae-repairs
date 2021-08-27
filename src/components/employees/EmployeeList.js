@@ -1,34 +1,41 @@
 import React, { useEffect, useState } from "react"
 
-
-
 export const EmployeeList = () => {
+    const [employees, changeEmployee] = useState([])
+    const [specialties, setSpecial] = useState("")
 
-    const [employees, assignEmployees] = useState([])
 
     useEffect(
         () => {
             fetch("http://localhost:8088/employees")
                 .then(res => res.json())
-                .then(
-                    (employeeArray) => { 
-                        assignEmployees(employeeArray)
-                    }
-                )
+                .then((data) => {
+                    changeEmployee(data)
+                })
         },
         []
     )
 
+    useEffect(() => {
+        const employeeSpecialties = employees.map(employee => employee.specialty)
+             setSpecial(employeeSpecialties.join(", "))
+            
+        }, [employees])
+
+
     return (
         <>
-        <h2><u>Employee List</u></h2>
-        {
-            employees.map(
-                (employeeObject) => {
-                    return <h4  key={`employee--${employeeObject.id}`}>{employeeObject.name}</h4>
-                 }
-            )
-        }
+            <div><u><b>
+                Specialties: { specialties }
+                </b></u>
+            </div>
+            {
+                employees.map(
+                    (employee) => {
+                        return <p key={`employee--${employee.id}`}>{employee.name}</p>
+                    }
+                )
+            }
         </>
     )
 }
