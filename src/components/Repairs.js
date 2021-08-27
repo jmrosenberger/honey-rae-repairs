@@ -17,12 +17,16 @@ export const Repairs = () => {
     )
 
     return (
+        <>
         <h1>Honey Rae's Repair Shop</h1>
 
         {
             customers.map(
-                () => { }
+                (customerObject) => {
+                    return <h2>{customerObject.name}</h2>
+                 }
             )
         }
+        </>
     )
 }
