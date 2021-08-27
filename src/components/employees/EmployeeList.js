@@ -26,8 +26,8 @@ export const EmployeeList = () => {
     return (
         <>
             <div><u><b>
-                Specialties: { specialties }
-                </b></u>
+                Specialties:</b></u> { specialties }
+                
             </div>
             {
                 employees.map(
