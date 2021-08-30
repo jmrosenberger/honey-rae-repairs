@@ -4,6 +4,7 @@ import { CustomerList } from "./customers/CustomerList"
 import { EmployeeList } from "./employees/EmployeeList"
 import { TicketList } from "./serviceTickets/TicketList"
 
+
 export const ApplicationViews = () => {
     return (
         <>
@@ -18,6 +19,8 @@ export const ApplicationViews = () => {
             <Route path="/employees">
                 <EmployeeList />
             </Route>
+
+            
         </>
     )
 }
