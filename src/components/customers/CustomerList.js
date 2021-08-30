@@ -18,7 +18,7 @@ export const CustomerList = () => {
 
     useEffect(
         () => {
-            console.log("Customers state changed", customers)
+            // console.log("Customers state changed", customers)
             if (customers.length === 1) {
                 updateMessage("You have 1 customer")
             }
