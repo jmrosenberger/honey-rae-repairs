@@ -3,6 +3,7 @@ import { Route } from "react-router-dom"
 import { CustomerList } from "./customers/CustomerList"
 import { EmployeeList } from "./employees/EmployeeList"
 import { TicketList } from "./serviceTickets/TicketList"
+import { TicketForm } from "./serviceTickets/TicketForm"
 
 
 export const ApplicationViews = () => {
@@ -12,8 +13,12 @@ export const ApplicationViews = () => {
                 <CustomerList />
             </Route>
 
-            <Route path="/serviceTickets">
+            <Route exact path="/serviceTickets">
                 <TicketList />
+            </Route>
+
+            <Route path="/serviceTickets/create">
+                <TicketForm />
             </Route>
 
             <Route path="/employees">
