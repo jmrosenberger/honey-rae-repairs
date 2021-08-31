@@ -23,7 +23,7 @@ export const TicketList = () => {
     return (
         <>
         <div>
-        <button onClick={() => history.push("/serviceTickets/create")}>Create Ticket</button>
+        <button className={`createTicket`} onClick={() => history.push("/serviceTickets/create")}>Create Ticket</button>
 
         </div>
         <ul>
@@ -35,6 +35,7 @@ export const TicketList = () => {
                                 {ticket.emergency ? "🚑" : ""} {ticket.description} submitted by 
                                 {ticket.customer.name} and worked on by {ticket.employee.name}
                             </p>
+                            <hr className={`dotted`}></hr>
 
                         </div>
                         
