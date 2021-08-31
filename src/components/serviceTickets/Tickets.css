@@ -1,3 +1,16 @@
 .emergency {
     background-color: lightcoral;
+    margin-right: 2rem;
 }
+
+.createTicket {
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+hr.dotted {
+    border-top: 2px dotted #bbb;
+    /* margin-left: 7rem;
+    margin-right: 7rem; */
+    margin: 1rem 7rem;
+  }
