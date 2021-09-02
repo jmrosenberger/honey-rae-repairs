@@ -4,7 +4,8 @@ import "./NavBar.css"
 
 export const NavBar = () => {
     return (
-        <ul className="navbar">
+        <div className="navbar">
+       
             <li className="navbar__item">
                 <Link className="navbar__link" to="/employees">Employees</Link>
             </li>
@@ -28,6 +29,7 @@ export const NavBar = () => {
                 </Link>
             </li>
 
-        </ul>
+        
+        </div>
     )
 }

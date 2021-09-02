@@ -33,7 +33,7 @@ export const EmployeeForm = () => {
 
     return (
         
-        <form className="hireForm">
+        <form className="employee employee__hireForm">
             <h2 className="hireForm__title">New Employee</h2>
             <fieldset>
                 <div className="form-group">

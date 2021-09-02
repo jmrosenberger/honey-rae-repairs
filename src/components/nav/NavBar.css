@@ -1,7 +1,12 @@
 .navbar {
+    background-color: goldenrod;
+}
+
+.navbar {
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: left;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    border: 2px solid red;
 }
 
 .navbar__item {
