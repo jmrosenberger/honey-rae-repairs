@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react"
+import "./Customers.css"
 
 export const CustomerList = () => {
     const [customers, setCustomers] = useState([])
@@ -31,11 +32,11 @@ export const CustomerList = () => {
 
     return (
         <>
-        <div><u><b>{totalCustomerMessage}</b></u></div>
+        <div className="customers customer__list"><u><b>{totalCustomerMessage}</b></u></div>
             {
                 customers.slice(0, 5).map(
                     (customerObject) => {
-                        return <p key={`customer--${customerObject.id}`}>{customerObject.name}</p>
+                        return <p className="customers customer__name" key={`customer--${customerObject.id}`}>{customerObject.name}</p>
                     }
                 )
             }

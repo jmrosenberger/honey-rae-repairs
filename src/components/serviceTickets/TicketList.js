@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
+import { useHistory, Link } from "react-router-dom"
 import "./Tickets.css";
 
 
@@ -23,16 +23,17 @@ export const TicketList = () => {
     return (
         <>
         <div>
-        <button className={`createTicket`} onClick={() => history.push("/serviceTickets/create")}>Create Ticket</button>
-
+            <button className={`createTicket`} onClick={() => history.push("/serviceTickets/create")}>Create Ticket</button>
         </div>
-        <ul>
+      
+       
             {
                 tickets.map(
                     (ticket) => {
                         return <div key={`ticket--${ticket.id}`}>
-                            <p className={`${ticket.emergency ? "emergency" : "ticket"}`}>
-                                {ticket.emergency ? "🚑" : ""} {ticket.description} submitted by 
+                            <p className={`ticket ${ticket.emergency ? "emergency" : "ticket"}`}>
+                                {ticket.emergency ? "🚑" : ""}
+                                <Link to={`/serviceTickets/${ticket.id}`}>{ticket.description}</Link> submitted by 
                                 {ticket.customer.name} and worked on by {ticket.employee.name}
                             </p>
                             <hr className={`dotted`}></hr>
@@ -42,7 +43,7 @@ export const TicketList = () => {
                     }
                 )
             }
-        </ul>
+        
         </>
     )
 }
