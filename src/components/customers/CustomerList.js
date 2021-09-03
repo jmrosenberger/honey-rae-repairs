@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import "./Customers.css"
+import { getAllCustomers } from "../ApiManager"
 
 export const CustomerList = () => {
     const [customers, setCustomers] = useState([])
@@ -7,9 +8,7 @@ export const CustomerList = () => {
 
     useEffect(
         () => {
-            console.log("Initial useEffect")
-            fetch("http://localhost:8088/customers")
-                .then(res => res.json())
+            getAllCustomers()
                 .then((data) => {
                     setCustomers(data)
                 })
@@ -19,7 +18,6 @@ export const CustomerList = () => {
 
     useEffect(
         () => {
-            // console.log("Customers state changed", customers)
             if (customers.length === 1) {
                 updateMessage("You have 1 customer")
             }

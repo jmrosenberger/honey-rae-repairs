@@ -43,6 +43,7 @@ fieldset {
 
 .container--login {
     text-align: center;
+    margin-top: 20rem;
 }
 
 .form--login {
@@ -53,6 +54,9 @@ fieldset {
     background-color: hsla(0,0%,100%,0.40);
     background-blend-mode: overlay;
     background-repeat: no-repeat;
+    border: 20px ridge goldenrod;
+    padding-left: 2rem;
+    color: olivedrab;
 }
 
 .button--close {
@@ -63,5 +67,15 @@ fieldset {
 .dialog {
     min-width: 15rem;
     min-height: 5rem;
+    
 }
 
+.button__submit {
+    color: rgb(106, 142, 34);
+    background-color: goldenrod;
+    font-weight: bold;
+}
+
+.form__register {
+    margin-top: 20rem;
+}
