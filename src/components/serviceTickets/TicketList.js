@@ -33,8 +33,9 @@ export const TicketList = () => {
                         return <div key={`ticket--${ticket.id}`}>
                             <p className={`ticket ${ticket.emergency ? "emergency" : "ticket"}`}>
                                 {ticket.emergency ? "🚑" : ""}
-                                <Link to={`/serviceTickets/${ticket.id}`}>{ticket.description}</Link> submitted by 
-                                {ticket.customer.name} and worked on by {ticket.employee.name}
+                                <Link to={`/serviceTickets/${ticket.id}`}>{ticket.description}</Link> -
+                                submitted by {ticket.customer.name} and worked on by {ticket.employee.name}
+                                
                             </p>
                             <hr className={`dotted`}></hr>
 
